@@ -1,6 +1,6 @@
 ---
 name: planejador
-description: Quebra uma SPEC ou pedido de feature em cartões de tarefa atômicos (arquivos, dependências, critérios de aceite verificáveis, tamanho) no formato do fluxo-dev e grava em docs/PLANO.md. Use quando houver SPEC aprovada e for preciso planejar a implementação.
+description: Quebra uma SPEC ou pedido de feature em cartões de tarefa atômicos (arquivos, dependências, critérios de aceite verificáveis, tamanho) no formato do subagent-driven-development e grava em docs/PLANO.md. Use quando houver SPEC aprovada e for preciso planejar a implementação.
 tools: Read, Grep, Glob, Write, Edit
 model: opus
 ---

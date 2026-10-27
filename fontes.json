@@ -1,0 +1,233 @@
+{
+  "_sobre": "Skills de terceiros usadas como base. 'caminho' = pasta da skill no repo de origem; 'alvo' = nome da skill aqui. Cópias intactas ficam em vendor/<alvo>; nossas práticas em complementos/<alvo>.md. Rode scripts/atualizar_fontes.py para puxar versões novas e scripts/montar.py para gerar skills/.",
+  "repos": {
+    "obra/superpowers": {
+      "commit": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+      "licenca": "MIT",
+      "arquivos_licenca": [
+        "LICENSE"
+      ],
+      "estrelas": "~303 mil (out/2026)"
+    },
+    "affaan-m/everything-claude-code": {
+      "commit": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
+      "licenca": "MIT",
+      "arquivos_licenca": [
+        "LICENSE"
+      ],
+      "estrelas": "~285 mil (out/2026)"
+    },
+    "forrestchang/andrej-karpathy-skills": {
+      "commit": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+      "licenca": "MIT (declarada no README)",
+      "arquivos_licenca": [],
+      "estrelas": "~210 mil (2026)",
+      "nota_licenca": "Licença: MIT, conforme declarado na seção \"License\" do README de https://github.com/forrestchang/andrej-karpathy-skills (o repositório não traz arquivo LICENSE).\nCopyright (c) autores de forrestchang/andrej-karpathy-skills.\n"
+    },
+    "anthropics/skills": {
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "licenca": "Apache-2.0",
+      "arquivos_licenca": [
+        "skills/frontend-design/LICENSE.txt"
+      ],
+      "estrelas": "~182 mil (out/2026)"
+    },
+    "JuliusBrussee/caveman": {
+      "commit": "9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4",
+      "licenca": "Apache-2.0",
+      "arquivos_licenca": [
+        "LICENSE",
+        "NOTICE"
+      ],
+      "estrelas": "~111 mil (out/2026)"
+    },
+    "emilkowalski/skills": {
+      "commit": "2d228630ba1446365f614a108cb8252f1feda202",
+      "licenca": "MIT",
+      "arquivos_licenca": [
+        "LICENSE"
+      ],
+      "estrelas": "~23 mil (2026)"
+    }
+  },
+  "skills": [
+    {
+      "alvo": "regras",
+      "parte": "Regras",
+      "repo": "forrestchang/andrej-karpathy-skills",
+      "caminho": "skills/karpathy-guidelines",
+      "original": "karpathy-guidelines",
+      "descricao": "Regras inegociáveis do agente em qualquer projeto: as 4 diretrizes Karpathy (pensar antes de codar, simplicidade, mudança cirúrgica, objetivo verificável) + regras da base sobre escopo, verificação, ações perigosas, segredos/LGPD, git e comunicação. Use ao iniciar qualquer tarefa de código, antes de ações destrutivas, ou quando o usuário disser \"regras\", \"pode fazer isso?\", \"siga as regras\". Behavioral guidelines to reduce common LLM coding mistakes."
+    },
+    {
+      "alvo": "frontend",
+      "parte": "Front",
+      "repo": "affaan-m/everything-claude-code",
+      "caminho": "skills/frontend-patterns",
+      "original": "frontend-patterns",
+      "descricao": "Front-end patterns for React, Next.js, state management, performance and UI best practices + padrões da base: Next.js App Router, TypeScript estrito, Tailwind, shadcn/ui, react-hook-form+Zod, estrutura de pastas, acessibilidade (WCAG AA), responsividade e Core Web Vitals. Use ao criar ou alterar páginas, componentes, layouts, formulários, estilos ou UI web/Electron, ou quando o usuário falar em \"tela\", \"página\", \"componente\", \"landing\", \"site\", \"UI\"."
+    },
+    {
+      "alvo": "frontend-design",
+      "parte": "Front",
+      "repo": "anthropics/skills",
+      "caminho": "skills/frontend-design",
+      "original": "frontend-design",
+      "descricao": "Create distinctive, production-grade frontend interfaces with high design quality that avoid generic \"AI slop\" aesthetics. Direção visual (tipografia, paleta, composição, movimento) para sites, landing pages, portfólios e telas. Use quando o usuário pedir para construir, redesenhar ou deixar mais bonito/premium um componente, página ou site."
+    },
+    {
+      "alvo": "backend",
+      "parte": "Back",
+      "repo": "affaan-m/everything-claude-code",
+      "caminho": "skills/backend-patterns",
+      "original": "backend-patterns",
+      "extras": [
+        [
+          "skills/api-design/SKILL.md",
+          "references/api-design-ecc.md"
+        ]
+      ],
+      "descricao": "Backend architecture patterns, API design, database optimization and server-side best practices + padrões da base: camadas controller/serviço/repositório, erro RFC 9457, validação na borda, migrações e índices, filas/jobs, webhooks idempotentes, observabilidade e LLM/RAG no servidor — Node/TS, Java Spring, Python FastAPI, C#. Use ao criar ou alterar endpoints, serviços, modelos de dados, migrações, integrações (WhatsApp/Meta, pagamentos), workers ou agentes de IA no servidor."
+    },
+    {
+      "alvo": "seguranca",
+      "parte": "Segurança",
+      "repo": "affaan-m/everything-claude-code",
+      "caminho": "skills/security-review",
+      "original": "security-review",
+      "descricao": "Security review checklist and patterns for authentication, user input, secrets, API endpoints and payment/sensitive features + regras da base: IDOR, injeções, XSS/CSRF/SSRF, headers, uploads, webhooks assinados, Electron, LGPD e prompt injection, com procedimento de auditoria. Use ao implementar login, permissões, pagamento, upload, webhook, dados pessoais, integração com LLM, antes de deploy, ou quando o usuário pedir \"auditoria\", \"tá seguro?\", \"security\", \"LGPD\"."
+    },
+    {
+      "alvo": "boas-praticas",
+      "parte": "Boas práticas",
+      "repo": "affaan-m/everything-claude-code",
+      "caminho": "skills/git-workflow",
+      "original": "git-workflow",
+      "descricao": "Git workflow patterns (branching, commit conventions, clean history, merge vs rebase, conflicts) + boas práticas da base: Conventional Commits, PRs pequenos, pirâmide de testes e TDD, lint/typecheck/CI, dependências, ambientes, README/AGENTS.md/ADR e Definition of Done. Use ao configurar repositório, escrever commits/PRs, montar CI, decidir o que testar, documentar, ou quando perguntarem \"qual o padrão\", \"está pronto?\"."
+    },
+    {
+      "alvo": "clean-code",
+      "parte": "Clean code",
+      "repo": "affaan-m/everything-claude-code",
+      "caminho": "skills/coding-standards",
+      "original": "coding-standards",
+      "descricao": "Baseline cross-project coding conventions for naming, readability, immutability and code-quality review + clean code da base: funções pequenas, early return, erros nunca engolidos, estados impossíveis, regra de três, comentários de porquê e refatoração segura, com exemplos antes/depois. Use sempre que escrever, revisar ou refatorar código, ou quando pedirem \"limpa esse código\", \"refatora\", \"clean code\"."
+    },
+    {
+      "alvo": "efeitos",
+      "parte": "Efeitos",
+      "repo": "emilkowalski/skills",
+      "caminho": "skills/animate",
+      "original": "animate",
+      "descricao": "Build an animation from scratch making decisions in the right order (should it animate, purpose, tool, properties, curve, duration, interruption, exit) — Emil Kowalski — + catálogo de efeitos prontos da base (reveal, magnético, spotlight, tilt, texto em cascata, marquee, fundo gradiente, cursor, contador, typewriter, parallax) em CSS/JS e React. Use quando pedirem animação, efeito, micro-interação, hover, efeito de scroll, \"deixa mais vivo\", \"site premium\"."
+    },
+    {
+      "alvo": "economia-tokens",
+      "parte": "Economia de tokens",
+      "repo": "JuliusBrussee/caveman",
+      "caminho": "skills/caveman",
+      "original": "caveman",
+      "descricao": "Economia de tokens: modo de resposta ultra-curta baseado no Caveman (resposta primeiro, sem enrolação, todo fato técnico mantido) + práticas da base para gastar menos contexto (Graphify antes de ler, busca dirigida, saídas curtas, subagentes, modelo certo, AGENTS.md enxuto, limpar/compactar). Use quando falarem em \"tokens\", \"contexto\", \"custo\", \"limite\", \"seja breve\", \"caveman\", ou quando a sessão ficar lenta/cara."
+    },
+    {
+      "alvo": "esquadrao-julgamento",
+      "parte": "Esquadrão de julgamento",
+      "repo": "affaan-m/everything-claude-code",
+      "caminho": "skills/council",
+      "original": "council",
+      "descricao": "Esquadrão de julgamento: conselho de vozes independentes para decisões ambíguas (council do ECC) + painel de juízes da base (especificação, segurança, qualidade, performance, UX) que julga diff/PR/marco com veredito APROVADO/REPROVADO e achados P0–P3 verificados. Use antes de merge/deploy, ao fechar um marco, em decisões go/no-go, ou quando pedirem \"revisa\", \"julga\", \"review\", \"tá bom pra subir?\", \"esquadrão\", \"conselho\"."
+    },
+    {
+      "alvo": "brainstorming",
+      "parte": "Superpowers",
+      "repo": "obra/superpowers",
+      "caminho": "skills/brainstorming"
+    },
+    {
+      "alvo": "diagnosing-superpowers",
+      "parte": "Superpowers",
+      "repo": "obra/superpowers",
+      "caminho": "skills/diagnosing-superpowers"
+    },
+    {
+      "alvo": "dispatching-parallel-agents",
+      "parte": "Agentes e fluxo",
+      "repo": "obra/superpowers",
+      "caminho": "skills/dispatching-parallel-agents"
+    },
+    {
+      "alvo": "executing-plans",
+      "parte": "Superpowers",
+      "repo": "obra/superpowers",
+      "caminho": "skills/executing-plans"
+    },
+    {
+      "alvo": "finishing-a-development-branch",
+      "parte": "Superpowers",
+      "repo": "obra/superpowers",
+      "caminho": "skills/finishing-a-development-branch"
+    },
+    {
+      "alvo": "receiving-code-review",
+      "parte": "Superpowers",
+      "repo": "obra/superpowers",
+      "caminho": "skills/receiving-code-review"
+    },
+    {
+      "alvo": "requesting-code-review",
+      "parte": "Superpowers",
+      "repo": "obra/superpowers",
+      "caminho": "skills/requesting-code-review"
+    },
+    {
+      "alvo": "subagent-driven-development",
+      "parte": "Agentes e fluxo",
+      "repo": "obra/superpowers",
+      "caminho": "skills/subagent-driven-development",
+      "descricao_extra": " | PT: fluxo de desenvolvimento da base — separação de tarefas por agentes (planejador, implementador, conferente), cartões atômicos em docs/PLANO.md, paralelismo seguro, conferência por cartão e julgamento por marco. Use quando disserem \"implementa\", \"executa o plano\", \"divide em agentes\", \"fluxo\", \"orquestra\"."
+    },
+    {
+      "alvo": "systematic-debugging",
+      "parte": "Superpowers",
+      "repo": "obra/superpowers",
+      "caminho": "skills/systematic-debugging"
+    },
+    {
+      "alvo": "test-driven-development",
+      "parte": "Superpowers",
+      "repo": "obra/superpowers",
+      "caminho": "skills/test-driven-development"
+    },
+    {
+      "alvo": "using-git-worktrees",
+      "parte": "Superpowers",
+      "repo": "obra/superpowers",
+      "caminho": "skills/using-git-worktrees"
+    },
+    {
+      "alvo": "using-superpowers",
+      "parte": "Superpowers",
+      "repo": "obra/superpowers",
+      "caminho": "skills/using-superpowers",
+      "descricao_extra": " | PT: inclui o mapa de qual skill do Superpowers usar em cada fase do fluxo da base."
+    },
+    {
+      "alvo": "verification-before-completion",
+      "parte": "Agentes e fluxo",
+      "repo": "obra/superpowers",
+      "caminho": "skills/verification-before-completion"
+    },
+    {
+      "alvo": "writing-plans",
+      "parte": "Superpowers",
+      "repo": "obra/superpowers",
+      "caminho": "skills/writing-plans"
+    },
+    {
+      "alvo": "writing-skills",
+      "parte": "Superpowers",
+      "repo": "obra/superpowers",
+      "caminho": "skills/writing-skills"
+    }
+  ]
+}

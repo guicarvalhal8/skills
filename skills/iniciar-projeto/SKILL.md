@@ -5,7 +5,7 @@ description: Ponto de entrada para começar QUALQUER projeto novo (ou adotar um 
 
 # Iniciar projeto
 
-Objetivo: sair desta skill com um repositório que tem **regras, mapa, especificação, plano e primeiro commit** — pronto para o `/fluxo-dev`.
+Objetivo: sair desta skill com um repositório que tem **regras, mapa, especificação, plano e primeiro commit** — pronto para a skill `subagent-driven-development` (fluxo por agentes).
 
 ## 0. Localizar a base
 ```bash
@@ -43,7 +43,7 @@ O `AGENTS.md` é lido por todas as IAs (Claude Code, Codex, Antigravity, Cursor,
 Extras específicos de ferramenta que o template traz (opcionais, não substituem o AGENTS.md): `.claude/settings.json` com `deny` de pastas pesadas (`node_modules`, `dist`, `.next`, `target`, `.venv`) — ajuste para a stack.
 
 ## 3. Dependências do fluxo
-- **Superpowers** instalado? Se não: `npx skills add obra/superpowers` (funciona em qualquer IA compatível). No Claude Code também dá para instalar como plugin (`/plugin …`, o usuário roda). Detalhes: skill `usar-superpowers`.
+- **Superpowers** já vem nesta base (skills `brainstorming`, `writing-plans`, `subagent-driven-development`, `test-driven-development`…). Confira que aparecem na lista de skills da IA; se não, rode o `install.sh` da base. Não instale o plugin oficial junto (duplica). Detalhes: skill `using-superpowers`.
 - **Graphify**: `command -v graphify || uv tool install graphifyy` → `graphify install` (registra a skill na IA em uso). Em projeto existente, rode `/graphify .` agora. Em projeto vazio, rode depois do primeiro scaffold. Detalhes: skill `usar-graphify`.
 
 ## 4. Scaffold da stack
@@ -51,14 +51,14 @@ Use o gerador oficial (ex.: `npx create-next-app@latest . --ts --tailwind --esli
 
 ## 5. Especificar e planejar
 1. Brainstorm com o usuário (Superpowers `brainstorming`, se instalado) → preencher `docs/SPEC.md`.
-2. Quebrar em tarefas atômicas → `docs/PLANO.md` (formato do cartão em `fluxo-dev`).
+2. Quebrar em tarefas atômicas → `docs/PLANO.md` (formato do cartão em `subagent-driven-development`).
 3. Registrar decisões de arquitetura relevantes em `docs/adr/`.
 4. Peça aprovação do usuário para SPEC e PLANO antes de implementar.
 
 ## 6. Fechar
 - `docs/PROGRESSO.md` com o estado atual e o próximo passo.
 - `git add -A && git commit -m "chore: bootstrap do projeto com skills-base"`.
-- Informe ao usuário: o que foi criado, o que falta configurar (env, chaves), e que o próximo passo é `/fluxo-dev`.
+- Informe ao usuário: o que foi criado, o que falta configurar (env, chaves), e que o próximo passo é a skill `subagent-driven-development`.
 
 ## Checklist de saída
 - [ ] AGENTS.md preenchido e curto

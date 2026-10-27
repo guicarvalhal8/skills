@@ -70,6 +70,6 @@ Write-Host "Caminho do repo salvo em $pathFile"
 Write-Host ""
 if (Get-Command graphify -ErrorAction SilentlyContinue) { Write-Host "  OK graphify" }
 else { Write-Host "  X graphify    -> uv tool install graphifyy; graphify install" }
-Write-Host "  ? superpowers -> npx skills add obra/superpowers   (Claude Code: /plugin install superpowers@superpowers-marketplace)"
+Write-Host "  OK superpowers (já incluído nesta base — não instale o plugin oficial junto)"
 Write-Host ""
 Write-Host "Pronto. Reinicie sua IA e peça: 'use a skill iniciar-projeto' (ou /iniciar-projeto)."

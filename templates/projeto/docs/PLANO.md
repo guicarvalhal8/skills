@@ -1,6 +1,6 @@
 # PLANO — {{NOME_PROJETO}}
 
-> Cartões atômicos (formato da skill fluxo-dev). Marque [x] quando o conferente aprovar.
+> Cartões atômicos (formato da skill subagent-driven-development). Marque [x] quando o conferente aprovar.
 
 ## Marco 1 — <nome>
 Paralelos possíveis: <ex.: T02 ∥ T03>

@@ -5,6 +5,8 @@ description: Como instalar e usar o Graphify (pacote graphifyy) para transformar
 
 # Graphify na base
 
+> A skill oficial do Graphify (`graphify`) **não** é copiada para esta base de propósito: o `graphify install` instala a versão casada com o CLI da sua máquina, para a sua IA. Esta skill (`usar-graphify`) traz só as regras da base para usá-la.
+
 Graphify indexa a pasta num grafo (AST local com tree-sitter para código — sem chamada de LLM; docs/PDF/imagens usam o modelo da sessão). O agente consulta o grafo em vez de dar grep e abrir dezenas de arquivos.
 
 ## Instalar (uma vez por máquina)
@@ -28,7 +30,7 @@ Saída em `graphify-out/`:
 
 ## Regras da base
 1. **Commite `graphify-out/`** — quem clonar (pessoa ou agente) já tem o mapa sem custo de reconstrução.
-2. Rode de novo depois de mudanças estruturais (novo módulo, renomeação grande, nova integração) — é passo do fim de marco no `fluxo-dev`.
+2. Rode de novo depois de mudanças estruturais (novo módulo, renomeação grande, nova integração) — é passo do fim de marco no `subagent-driven-development`.
 3. Ordem de consulta: `GRAPH_REPORT.md` → `/graphify query` → `Grep` dirigido → abrir trecho do arquivo.
 4. O grafo pode estar desatualizado: se a resposta do grafo e o código divergirem, o código manda — e reconstrua o grafo.
 5. Projeto vazio: só rode depois do primeiro scaffold.

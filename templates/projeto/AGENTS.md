@@ -26,7 +26,7 @@
 
 ## Regras do projeto
 - Siga as skills `regras`, `clean-code`, `boas-praticas` (base skills-base).
-- Implementação de feature: skill `fluxo-dev`. Antes de merge: skill `esquadrao-julgamento`.
+- Implementação de feature: skill `subagent-driven-development`. Antes de merge: skill `esquadrao-julgamento`.
 - Antes de explorar o código: leia `graphify-out/GRAPH_REPORT.md` (se existir).
 - Estado do trabalho: `docs/PROGRESSO.md` — leia ao começar, atualize ao terminar.
 - Nunca leia nem mostre `.env`; variáveis documentadas em `.env.example`.

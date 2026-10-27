@@ -86,6 +86,6 @@ echo "Caminho do repo salvo em $RAIZ/.agents/.skills-base-path"
 echo
 echo "Dependências (opcionais):"
 command -v graphify >/dev/null 2>&1 && echo "  ✓ graphify" || echo "  ✗ graphify    -> uv tool install graphifyy && graphify install"
-echo "  ? superpowers -> npx skills add obra/superpowers   (Claude Code: /plugin install superpowers@superpowers-marketplace)"
+echo "  ✓ superpowers (já incluído nesta base — não instale o plugin oficial junto)"
 echo
 echo "Pronto. Reinicie sua IA e peça: \"use a skill iniciar-projeto\" (ou /iniciar-projeto)."

@@ -1,6 +1,6 @@
 ---
 name: conferente
-description: Confere se um cartão implementado cumpre seus critérios de aceite — roda os testes/comandos, lê o diff dos arquivos alterados e devolve APROVADO ou REPROVADO com falhas objetivas. Não corrige código. Use após cada implementador no fluxo-dev.
+description: Confere se um cartão implementado cumpre seus critérios de aceite — roda os testes/comandos, lê o diff dos arquivos alterados e devolve APROVADO ou REPROVADO com falhas objetivas. Não corrige código. Use após cada implementador no subagent-driven-development.
 tools: Read, Grep, Glob, Bash
 model: haiku
 ---

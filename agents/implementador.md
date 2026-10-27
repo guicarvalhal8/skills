@@ -1,6 +1,6 @@
 ---
 name: implementador
-description: Implementa UM cartão do docs/PLANO.md com TDD, tocando apenas os arquivos do cartão, e devolve um relatório curto (STATUS/ARQUIVOS/TESTES/NOTAS). Use para executar cartões do fluxo-dev, inclusive vários em paralelo quando independentes.
+description: Implementa UM cartão do docs/PLANO.md com TDD, tocando apenas os arquivos do cartão, e devolve um relatório curto (STATUS/ARQUIVOS/TESTES/NOTAS). Use para executar cartões do subagent-driven-development, inclusive vários em paralelo quando independentes.
 tools: Read, Grep, Glob, Write, Edit, Bash
 model: sonnet
 ---
