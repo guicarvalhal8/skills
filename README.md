@@ -25,7 +25,28 @@ Cada parte parte da **skill mais estrelada do GitHub para aquele tema**, mantida
 | Graphify | `usar-graphify` | — (própria) | — | — | a skill oficial vem do `graphify install` |
 | Início | `iniciar-projeto` | — (própria) | — | — | monta o projeto usando tudo acima |
 
-Critério de escolha: para cada tema, a skill específica do repositório mais estrelado. Quando o tema não tem repositório dedicado forte (back, segurança, boas práticas, clean code, julgamento), vale a skill do repositório geral mais estrelado (everything-claude-code). Estrelas aproximadas, out/2026. Detalhes e commits fixados: `fontes.json` e `skills/<nome>/ORIGEM.md`.
+## ⚠️ Observações importantes
+
+**Como as skills foram escolhidas**
+- Para cada tema, a skill específica do repositório mais estrelado. Quando o tema não tem repositório dedicado forte (back, segurança, boas práticas, clean code, julgamento), vale a skill do repositório geral mais estrelado (everything-claude-code).
+- As estrelas são **aproximadas (out/2026)**, tiradas de rankings publicados (links no fim). A busca da API do GitHub não estava disponível na montagem. Os repositórios foram baixados para comparar o conteúdo e as licenças antes da escolha.
+- Repo, pasta, commit fixado e licença de cada fonte: `fontes.json` e `skills/<nome>/ORIGEM.md`.
+
+**Como funciona a montagem**
+- O texto original de cada skill fica **intacto** em `vendor/`, travado no commit baixado.
+- As suas práticas ficam em `complementos/`. O `scripts/montar.py` junta os dois e gera `skills/`.
+- **Não edite `skills/` à mão**: ela é regerada. Edite `complementos/<skill>.md` (ou `proprias/…`) e rode `python3 scripts/montar.py`.
+- O antigo `fluxo-dev` virou complemento de `subagent-driven-development`, e o `usar-superpowers` virou complemento de `using-superpowers`.
+
+**Três coisas para saber**
+1. **Superpowers já vem incluído.** Se o plugin oficial estiver instalado, desinstale; senão as skills aparecem duplicadas.
+2. **O Graphify não foi copiado de propósito.** O `graphify install` instala a skill oficial `graphify` na versão certa para o CLI da sua máquina. A base traz só `usar-graphify`, com as regras de uso.
+3. **O modo caveman não liga sozinho.** A skill `economia-tokens` só ativa o modo curto quando você pede ("caveman", "seja breve", "menos tokens"). Se ela carregar porque o assunto é contexto ou custo, valem só as práticas de economia de contexto.
+
+**Segurança das skills de terceiros**
+- Skills são instruções que a IA segue. Antes de incluir, o conteúdo foi varrido em busca de instruções escondidas (comentários HTML, caracteres invisíveis, "ignore previous instructions") e de comandos como `curl | sh`. Nada suspeito encontrado; o único comentário HTML em skill é uma nota de manutenção do autor.
+- Os únicos scripts incluídos são do Superpowers (servidor local do brainstorming visual e um utilitário de debug) e só rodam se você pedir.
+- Ao atualizar (`atualizar_fontes.py --ultima`), **revise o `git diff vendor/`** antes de commitar.
 
 ## Estrutura
 
@@ -133,7 +154,13 @@ python3 scripts/montar.py                       # suas práticas são reaplicada
 
 **Trocar a base de uma parte** (ex.: achou uma skill de backend melhor): mude `repo`/`caminho` daquela entrada em `fontes.json` e rode os dois scripts.
 
-**Segurança:** skills de terceiros são instruções que a IA segue. Antes de atualizar, revise o diff de `vendor/` (instruções escondidas em comentários HTML, caracteres invisíveis, `curl | sh`). Na montagem inicial, a varredura não achou nada suspeito. Os únicos scripts incluídos são do Superpowers (servidor local do brainstorming visual e um utilitário de debug), e só rodam se você pedir.
+**Segurança:** veja "Segurança das skills de terceiros" em Observações importantes, e revise sempre o diff de `vendor/`.
 
 ## Créditos e licenças
 O texto original de cada skill pertence aos autores: Jesse Vincent (Superpowers, MIT), Affaan Mustafa (everything-claude-code, MIT), Forrest Chang (andrej-karpathy-skills, MIT), Anthropic (frontend-design, Apache-2.0), Julius Brussee (Caveman, Apache-2.0; "Caveman" é marca registrada dele, e esta base **não** é o Caveman oficial), Emil Kowalski (skills, MIT). Cada pasta em `skills/` traz a licença e o `ORIGEM.md` do original. As modificações estão marcadas com `skills-base:complemento`.
+
+### Fontes das estrelas
+- [Superpowers, everything-claude-code e anthropics/skills — ayautomate (out/2026)](https://www.ayautomate.com/blog/best-claude-code-github-repos)
+- [andrej-karpathy-skills — Firecrawl](https://www.firecrawl.dev/blog/best-claude-code-skills)
+- [Ranking das skills mais populares (caveman, superpowers…) — Walma AI](https://walma.ai/en/guides/skills/best-claude-skills)
+- [Skills de animação (emilkowalski/skills) — Skillselion](https://skillselion.com/design/animation)
