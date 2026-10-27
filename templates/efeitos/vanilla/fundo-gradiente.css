@@ -1,0 +1,36 @@
+/* Fundo gradiente animado (manchas de cor suaves) — 100% CSS.
+   Uso: <section class="fundo-gradiente">…conteúdo…</section>
+   Cores: style="--g1: #7c3aed; --g2: #06b6d4; --g3: #f43f5e; --g-base: #0b0b10" */
+.fundo-gradiente {
+  --g1: #6d5efc; --g2: #19c3b2; --g3: #ff5c8a; --g-base: #0b0b10;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--g-base);
+}
+.fundo-gradiente::before {
+  content: "";
+  position: absolute; inset: -40%;
+  z-index: -1;
+  background:
+    radial-gradient(closest-side at 30% 35%, var(--g1), transparent 70%),
+    radial-gradient(closest-side at 70% 40%, var(--g2), transparent 70%),
+    radial-gradient(closest-side at 50% 75%, var(--g3), transparent 70%);
+  filter: blur(60px) saturate(1.2);
+  opacity: .55;
+  animation: fundo-girar 22s ease-in-out infinite alternate;
+}
+.fundo-gradiente::after { /* granulado sutil, evita banding */
+  content: "";
+  position: absolute; inset: 0;
+  z-index: -1;
+  opacity: .08;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+@keyframes fundo-girar {
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(25deg) scale(1.1) translate(3%, -2%); }
+  100% { transform: rotate(-15deg) scale(1.05) translate(-3%, 3%); }
+}
+@media (prefers-reduced-motion: reduce) { .fundo-gradiente::before { animation: none; } }

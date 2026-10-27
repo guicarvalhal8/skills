@@ -1,0 +1,11 @@
+{
+  "name": "skills-base",
+  "owner": { "name": "Guilherme Oliveira" },
+  "plugins": [
+    {
+      "name": "skills-base",
+      "source": "./",
+      "description": "Base para iniciar projetos com Claude Code."
+    }
+  ]
+}

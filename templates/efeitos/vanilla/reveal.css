@@ -1,0 +1,22 @@
+/* Reveal no scroll
+   Uso: <div data-reveal>…</div>  variações: data-reveal="up|down|left|right|scale|fade"
+        atraso: data-reveal-delay="200" (ms) · cascata nos filhos: <ul data-reveal-stagger="80">
+   Requer reveal.js. */
+[data-reveal] {
+  --reveal-dist: 28px;
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-dist), 0);
+  transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+[data-reveal="down"]  { transform: translate3d(0, calc(var(--reveal-dist) * -1), 0); }
+[data-reveal="left"]  { transform: translate3d(var(--reveal-dist), 0, 0); }
+[data-reveal="right"] { transform: translate3d(calc(var(--reveal-dist) * -1), 0, 0); }
+[data-reveal="scale"] { transform: scale(.94); }
+[data-reveal="fade"]  { transform: none; }
+[data-reveal].is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+}

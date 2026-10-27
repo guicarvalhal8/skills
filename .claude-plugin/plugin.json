@@ -1,0 +1,6 @@
+{
+  "name": "skills-base",
+  "description": "Base para iniciar projetos: regras, fluxo por agentes, esquadrão de julgamento, front, back, segurança, clean code, efeitos e economia de tokens.",
+  "version": "1.0.0",
+  "author": { "name": "Guilherme Oliveira" }
+}

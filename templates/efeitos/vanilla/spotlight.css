@@ -1,0 +1,33 @@
+/* Spotlight no card — brilho que segue o cursor dentro do card (e na borda).
+   Uso: <div class="spotlight">…</div>  cor: style="--spot-cor: 120 180 255"
+   Requer spotlight.js. */
+.spotlight {
+  --mx: 50%; --my: 50%; --spot-cor: 255 255 255; --spot-raio: 320px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.spotlight::before {
+  content: "";
+  position: absolute; inset: 0;
+  z-index: -1;
+  background: radial-gradient(var(--spot-raio) circle at var(--mx) var(--my), rgb(var(--spot-cor) / .12), transparent 60%);
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+.spotlight::after { /* borda iluminada */
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(calc(var(--spot-raio) * .6) circle at var(--mx) var(--my), rgb(var(--spot-cor) / .55), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+.spotlight:hover::before, .spotlight:hover::after { opacity: 1; }
+@media (hover: none) { .spotlight::before, .spotlight::after { display: none; } }

@@ -1,0 +1,41 @@
+# dependências
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# build
+.next/
+out/
+dist/
+build/
+target/
+bin/
+obj/
+coverage/
+*.tsbuildinfo
+
+# ambiente e segredos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# sistema / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# logs
+*.log
+npm-debug.log*
+
+# Claude Code (pessoal)
+.claude/settings.local.json
+
+# graphify-out/ NÃO é ignorado de propósito: commite o grafo

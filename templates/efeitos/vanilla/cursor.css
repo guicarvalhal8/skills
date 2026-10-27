@@ -1,0 +1,19 @@
+/* Cursor seguidor (ponto + anel). Só desktop. Requer cursor.js.
+   Elementos que aumentam o anel: a, button, [data-cursor]   texto no anel: data-cursor="Ver" */
+.cursor-ponto, .cursor-anel {
+  position: fixed; top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  transform: translate3d(-100px, -100px, 0);
+}
+.cursor-ponto { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: currentColor; }
+.cursor-anel {
+  width: 36px; height: 36px; margin: -18px 0 0 -18px;
+  border: 1px solid currentColor;
+  display: grid; place-items: center;
+  font: 600 10px/1 system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase;
+  transition: width .25s ease, height .25s ease, margin .25s ease, background-color .25s ease, opacity .25s ease;
+}
+.cursor-anel.ativo { width: 64px; height: 64px; margin: -32px 0 0 -32px; background: rgb(255 255 255 / .08); }
+.cursor-anel.oculto, .cursor-ponto.oculto { opacity: 0; }
