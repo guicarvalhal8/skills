@@ -11,10 +11,10 @@ Graphify indexa a pasta num grafo (AST local com tree-sitter para código — se
 ```bash
 uv tool install graphifyy      # atenção: dois "y" no nome do pacote
 # ou: pipx install graphifyy
-graphify install               # registra a skill /graphify no Claude Code
+graphify install               # registra a skill /graphify na sua IA (Claude Code, Codex, Cursor, Gemini CLI, Antigravity… — ver --help)
 ```
 Extras por stack quando precisar (ex.: Terraform): `uv tool install "graphifyy[terraform]"`.
-Reinicie o Claude Code depois do `graphify install`.
+Reinicie a IA depois do `graphify install`.
 
 ## Usar no projeto
 ```

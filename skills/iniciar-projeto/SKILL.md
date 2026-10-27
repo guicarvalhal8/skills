@@ -1,6 +1,6 @@
 ---
 name: iniciar-projeto
-description: Ponto de entrada para começar QUALQUER projeto novo (ou adotar um projeto existente) usando a base skills-base — copia os templates (CLAUDE.md, docs, .github, settings), confere Superpowers e Graphify, define stack, e conduz brainstorm → SPEC → PLANO. Use quando o usuário disser "novo projeto", "iniciar projeto", "começar do zero", "bootstrap", "setup inicial", "adotar este repo" ou rodar /iniciar-projeto.
+description: Ponto de entrada para começar QUALQUER projeto novo (ou adotar um projeto existente) usando a base skills-base — copia os templates (AGENTS.md, docs, .github, settings), confere Superpowers e Graphify, define stack, e conduz brainstorm → SPEC → PLANO. Use quando o usuário disser "novo projeto", "iniciar projeto", "começar do zero", "bootstrap", "setup inicial", "adotar este repo" ou rodar /iniciar-projeto.
 ---
 
 # Iniciar projeto
@@ -9,7 +9,7 @@ Objetivo: sair desta skill com um repositório que tem **regras, mapa, especific
 
 ## 0. Localizar a base
 ```bash
-BASE="$(cat ~/.claude/.skills-base-path 2>/dev/null || cat .claude/.skills-base-path 2>/dev/null)"
+BASE="$(cat ~/.agents/.skills-base-path 2>/dev/null || cat .agents/.skills-base-path 2>/dev/null)"
 echo "$BASE"; ls "$BASE/templates/projeto"
 ```
 Se não existir, peça ao usuário o caminho do clone do `skills-base` (ou para rodar `./install.sh`).
@@ -36,14 +36,15 @@ Projeto novo ou existente — **nunca sobrescreva** arquivo que já existe:
 ```bash
 "$BASE/scripts/novo-projeto.sh" . "<nome-do-projeto>"
 ```
-Depois **edite o `CLAUDE.md` gerado**: preencha visão, stack, comandos (dev/test/lint/build) e estrutura de pastas. Mantenha-o curto (< 80 linhas) — ele é lido em toda sessão.
+Depois **edite o `AGENTS.md` gerado**: preencha visão, stack, comandos (dev/test/lint/build) e estrutura de pastas. Mantenha-o curto (< 80 linhas) — ele é lido em toda sessão.
 
-Ajuste `.claude/settings.json` (permissões `deny` de pastas pesadas: `node_modules`, `dist`, `.next`, `target`, `venv`) para a stack escolhida.
+O `AGENTS.md` é lido por todas as IAs (Claude Code, Codex, Antigravity, Cursor, Copilot…). **Não crie `CLAUDE.md`/`GEMINI.md` separados** — se uma ferramenta exigir, o arquivo dela deve só importar o `AGENTS.md` (ex.: `@AGENTS.md`).
+
+Extras específicos de ferramenta que o template traz (opcionais, não substituem o AGENTS.md): `.claude/settings.json` com `deny` de pastas pesadas (`node_modules`, `dist`, `.next`, `target`, `.venv`) — ajuste para a stack.
 
 ## 3. Dependências do fluxo
-- **Superpowers** instalado? Se não, peça ao usuário para rodar no Claude Code (são comandos de barra, você não executa no shell):
-  `/plugin marketplace add obra/superpowers-marketplace` e `/plugin install superpowers@superpowers-marketplace`. Detalhes: skill `usar-superpowers`.
-- **Graphify**: `command -v graphify || uv tool install graphifyy` → `graphify install`. Em projeto existente, rode `/graphify .` agora. Em projeto vazio, rode depois do primeiro scaffold. Detalhes: skill `usar-graphify`.
+- **Superpowers** instalado? Se não: `npx skills add obra/superpowers` (funciona em qualquer IA compatível). No Claude Code também dá para instalar como plugin (`/plugin …`, o usuário roda). Detalhes: skill `usar-superpowers`.
+- **Graphify**: `command -v graphify || uv tool install graphifyy` → `graphify install` (registra a skill na IA em uso). Em projeto existente, rode `/graphify .` agora. Em projeto vazio, rode depois do primeiro scaffold. Detalhes: skill `usar-graphify`.
 
 ## 4. Scaffold da stack
 Use o gerador oficial (ex.: `npx create-next-app@latest . --ts --tailwind --eslint --app --src-dir --import-alias "@/*"`), **não** escreva boilerplate à mão. Depois configure lint + format + teste (ver `boas-praticas`).
@@ -60,7 +61,7 @@ Use o gerador oficial (ex.: `npx create-next-app@latest . --ts --tailwind --esli
 - Informe ao usuário: o que foi criado, o que falta configurar (env, chaves), e que o próximo passo é `/fluxo-dev`.
 
 ## Checklist de saída
-- [ ] CLAUDE.md preenchido e curto
+- [ ] AGENTS.md preenchido e curto
 - [ ] .env.example com todas as variáveis (sem valores reais) e `.env` no .gitignore
 - [ ] lint, format e teste rodando (`npm test` / equivalente passa, mesmo que vazio)
 - [ ] SPEC e PLANO aprovados

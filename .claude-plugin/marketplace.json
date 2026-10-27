@@ -5,7 +5,7 @@
     {
       "name": "skills-base",
       "source": "./",
-      "description": "Base para iniciar projetos com Claude Code."
+      "description": "Base para iniciar projetos (skills no padrão aberto Agent Skills)."
     }
   ]
 }

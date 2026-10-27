@@ -40,7 +40,7 @@ Em todo PR: install → lint → typecheck → test → build. Template: `.githu
 
 ## Documentação que vale a pena
 - **README:** o que é, como rodar em 3 comandos, variáveis de ambiente, como testar, como fazer deploy.
-- **CLAUDE.md:** curto, para o agente (stack, comandos, convenções, onde fica o quê).
+- **AGENTS.md:** curto, para o agente (stack, comandos, convenções, onde fica o quê).
 - **docs/SPEC.md, docs/PLANO.md, docs/PROGRESSO.md:** produto, tarefas e estado.
 - **ADR** (`docs/adr/NNNN-titulo.md`) para decisões difíceis de reverter (banco, auth, arquitetura).
 - Comentário no código explica **por quê**, nunca o quê.

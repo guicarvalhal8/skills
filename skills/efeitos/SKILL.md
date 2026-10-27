@@ -7,7 +7,7 @@ description: Catálogo de efeitos visuais e animações prontos para sites e app
 
 Os arquivos prontos ficam em `templates/efeitos/` do repo skills-base:
 ```bash
-BASE="$(cat ~/.claude/.skills-base-path)"; ls "$BASE/templates/efeitos"/{vanilla,react}
+BASE="$(cat ~/.agents/.skills-base-path)"; ls "$BASE/templates/efeitos"/{vanilla,react}
 ```
 Abra `templates/efeitos/index.html` no navegador para ver todos funcionando.
 

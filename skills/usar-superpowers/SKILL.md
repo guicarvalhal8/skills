@@ -1,21 +1,26 @@
 ---
 name: usar-superpowers
-description: Como instalar, conferir e combinar o plugin Superpowers (obra/superpowers) com o fluxo desta base — brainstorming, writing-plans, executing-plans, subagent-driven-development, test-driven-development, systematic-debugging, using-git-worktrees, requesting/receiving-code-review, finishing-a-development-branch. Use ao configurar um projeto, quando o usuário mencionar "superpowers", ou para decidir qual skill do Superpowers usar em cada fase.
+description: Como instalar, conferir e combinar o Superpowers (obra/superpowers) com o fluxo desta base em qualquer IA (Claude Code, Codex, Antigravity, Cursor, Gemini CLI) — brainstorming, writing-plans, executing-plans, subagent-driven-development, test-driven-development, systematic-debugging, using-git-worktrees, requesting/receiving-code-review, finishing-a-development-branch. Use ao configurar um projeto, quando o usuário mencionar "superpowers", ou para decidir qual skill do Superpowers usar em cada fase.
 ---
 
 # Superpowers na base
 
-Superpowers (Jesse Vincent, MIT) é a **camada de metodologia**: brainstorm → plano → TDD → subagentes → review → merge. Esta base usa o Superpowers como motor e acrescenta regras, padrões de stack, o esquadrão de julgamento e a economia de tokens.
+Superpowers (Jesse Vincent, MIT) é a **camada de metodologia**: brainstorm → plano → TDD → subagentes → review → merge. Esta base usa o Superpowers como motor e acrescenta regras, padrões de stack, o esquadrão de julgamento e a economia de tokens. As skills dele seguem o mesmo padrão `SKILL.md`, então funcionam nas IAs compatíveis.
 
 ## Instalar
-Dentro do Claude Code (comandos de barra — peça ao usuário para rodar; você não executa no shell):
+**Qualquer IA (recomendado):**
+```bash
+npx skills add obra/superpowers              # o CLI pergunta para quais agentes instalar
+npx skills add obra/superpowers -a codex     # ou escolha o agente
+```
+Alternativa manual: clone `obra/superpowers` e linke a pasta `skills/*` em `~/.agents/skills/` (Codex, Gemini CLI, Antigravity) e/ou `~/.claude/skills/`.
+
+**Claude Code (plugin, traz também os comandos):** o usuário roda dentro da ferramenta:
 ```
 /plugin marketplace add obra/superpowers-marketplace
 /plugin install superpowers@superpowers-marketplace
 ```
-Reinicie o Claude Code. Conferir: `/plugin` deve listar `superpowers`; as skills aparecem como `superpowers:<nome>`.
-
-Alternativa sem plugin (outros agentes ou cópia local): `npx skills add obra/superpowers`.
+Reinicie a IA. Conferir: a lista de skills da ferramenta deve mostrar `brainstorming`, `writing-plans` etc.
 
 ## Mapa: fase da base → skill do Superpowers
 | Fase (`fluxo-dev`) | Superpowers | Observação da base |
@@ -36,4 +41,4 @@ Alternativa sem plugin (outros agentes ou cópia local): `npx skills add obra/su
 - Se o Superpowers e esta base divergirem em **formato** (ex.: onde salvar o plano), use os caminhos da base (`docs/SPEC.md`, `docs/PLANO.md`, `docs/PROGRESSO.md`).
 - Em **metodologia** (TDD, debugging, brainstorm), siga o Superpowers.
 - Spike/protótipo descartável: pode pular brainstorm e TDD — diga explicitamente que é spike.
-- Os nomes exatos das skills mudam entre versões: confira com `/plugin` ou na lista de skills antes de citar uma.
+- Os nomes exatos das skills mudam entre versões: confira na lista de skills da ferramenta antes de citar uma.

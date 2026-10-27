@@ -14,7 +14,7 @@ BASE=${BASE:-main}
 git diff --stat "$BASE"...HEAD
 git diff "$BASE"...HEAD > /tmp/autos.diff      # juízes leem este arquivo, não o repo todo
 ```
-Autos = caminho do diff + cartões/SPEC relevantes (`docs/SPEC.md`, cartões do marco) + comandos de teste do `CLAUDE.md`.
+Autos = caminho do diff + cartões/SPEC relevantes (`docs/SPEC.md`, cartões do marco) + comandos de teste do `AGENTS.md`.
 
 ## 2. Escolher a composição
 | Modo | Quando | Juízes |
@@ -25,7 +25,8 @@ Autos = caminho do diff + cartões/SPEC relevantes (`docs/SPEC.md`, cartões do 
 
 O usuário pode forçar: `/esquadrao-julgamento completo`.
 
-## 3. Disparar (todos na MESMA mensagem = paralelo)
+## 3. Disparar (todos de uma vez = paralelo)
+Com subagentes: dispare os juízes juntos. Sem subagentes: rode cada juiz em sequência, um por vez, cada um lendo só os autos.
 Prompt para cada juiz:
 ```
 Você é <juiz>. Julgue os autos abaixo SOMENTE pela sua especialidade.
@@ -74,4 +75,4 @@ Composição: <modo> (<juízes>) · Testes: <comando> → <resultado>
 ```
 Depois: P0/P1 viram cartões no topo de `docs/PLANO.md`; após corrigir, rejulgue **só** com os juízes que reprovaram.
 
-Rubricas detalhadas de cada juiz: `references/rubricas.md`. As definições dos subagentes ficam em `agents/juiz-*.md` do repo skills-base.
+Rubricas detalhadas de cada juiz: `references/rubricas.md`. Os prompts dos juízes ficam em `agents/juiz-*.md` do repo skills-base (servem para qualquer IA).

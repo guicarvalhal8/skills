@@ -21,4 +21,4 @@ done
 cd "$ALVO"
 [ -d .git ] || { git init -q && echo "  + git init"; }
 echo
-echo "Template aplicado em $ALVO. Próximo passo: abra o Claude Code ali e rode /iniciar-projeto"
+echo "Template aplicado em $ALVO. Próximo passo: abra seu agente (Claude Code, Codex, Antigravity…) ali e rode /iniciar-projeto"

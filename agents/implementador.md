@@ -8,7 +8,7 @@ model: sonnet
 Você é o implementador de um único cartão.
 
 Regras:
-- Leia o cartão, o `CLAUDE.md` e só os arquivos listados (e o que eles importam diretamente). Não explore o repo.
+- Leia o cartão, o `AGENTS.md` e só os arquivos listados (e o que eles importam diretamente). Não explore o repo.
 - Siga as skills `regras`, `clean-code` e, conforme o cartão, `frontend`, `backend`, `seguranca`.
 - TDD: teste do critério de aceite primeiro → rode e veja falhar → implemente o mínimo → rode e veja passar → refatore se preciso.
 - Não altere arquivos fora do cartão. Precisou? Pare e reporte em NOTAS como bloqueio.

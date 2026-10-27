@@ -7,6 +7,8 @@ description: Fluxo de desenvolvimento com separação de tarefas por agentes —
 
 Você (sessão principal) é o **orquestrador**: planeja, distribui, confere e integra. Quem escreve o código das tarefas são subagentes com contexto limpo. Isso mantém o seu contexto pequeno e cada tarefa focada.
 
+> **Qualquer IA:** os papéis (planejador, implementador, conferente, juízes) têm o prompt pronto em `agents/*.md` do repo skills-base. Se a ferramenta tem subagentes (Claude Code, Codex, Antigravity…), dispare um subagente com esse prompt. Se não tem, execute o papel você mesmo, **um cartão por vez**, e limpe/compacte o contexto entre cartões — o fluxo continua igual.
+
 ```
  0 MAPA ─▶ 1 SPEC ─▶ 2 PLANO ─▶ 3 EXECUÇÃO ─▶ 4 CONFERÊNCIA ─▶ 5 JULGAMENTO ─▶ 6 ENTREGA
  graphify   brainstorm  cartões    implementador   conferente      esquadrão        commit/PR
@@ -17,14 +19,14 @@ Você (sessão principal) é o **orquestrador**: planeja, distribui, confere e i
 | Papel | Quem | Modelo | Faz | Não faz |
 |---|---|---|---|---|
 | Orquestrador | sessão principal | o atual | plano, distribuição, integração, decisões | escrever código de tarefa grande |
-| `planejador` | subagente | opus/inherit | quebra SPEC em cartões | implementar |
-| `implementador` | subagente (1 por cartão) | sonnet | código + testes do cartão | sair do escopo do cartão |
-| `conferente` | subagente | haiku/sonnet | verifica critérios de aceite rodando testes | corrigir (só reporta) |
+| `planejador` | subagente | forte | quebra SPEC em cartões | implementar |
+| `implementador` | subagente (1 por cartão) | médio | código + testes do cartão | sair do escopo do cartão |
+| `conferente` | subagente | barato | verifica critérios de aceite rodando testes | corrigir (só reporta) |
 | Juízes | `esquadrao-julgamento` | variados | revisão multi-ângulo do marco | — |
-| Explore (nativo) | subagente | haiku | buscas amplas no código | editar |
+| Explorador | subagente de busca da ferramenta (ex.: Explore no Claude Code) | barato | buscas amplas no código | editar |
 
 ## 0. Mapa
-Antes de ler arquivos: se existir `graphify-out/GRAPH_REPORT.md`, leia-o; para perguntas de arquitetura use `/graphify query "..."`. Busca ampla → subagente Explore. Não abra arquivo inteiro para achar uma função (ver `economia-tokens`).
+Antes de ler arquivos: se existir `graphify-out/GRAPH_REPORT.md`, leia-o; para perguntas de arquitetura use `/graphify query "..."`. Busca ampla → subagente de exploração. Não abra arquivo inteiro para achar uma função (ver `economia-tokens`).
 
 ## 1. SPEC
 `docs/SPEC.md` define **o quê e por quê**: objetivo, usuários, requisitos, fora de escopo, critérios de aceite globais. Se não existir ou estiver vaga, faça o brainstorm com o usuário (Superpowers `brainstorming`). Não planeje sem SPEC aprovada.
@@ -56,7 +58,7 @@ Para cada cartão pronto (dependências concluídas), dispare um `implementador`
 
 ```
 Implemente o cartão abaixo. Leia só os arquivos listados e o que eles importam.
-Siga CLAUDE.md e as skills regras/clean-code/<frontend|backend>/seguranca.
+Siga AGENTS.md e as skills regras/clean-code/<frontend|backend>/seguranca.
 TDD: escreva o teste do aceite primeiro, veja falhar, implemente, veja passar.
 Ao final responda SOMENTE no formato:
 STATUS: concluido | bloqueado

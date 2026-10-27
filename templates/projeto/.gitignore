@@ -35,7 +35,7 @@ Thumbs.db
 *.log
 npm-debug.log*
 
-# Claude Code (pessoal)
+# configs pessoais de agentes
 .claude/settings.local.json
 
 # graphify-out/ NÃO é ignorado de propósito: commite o grafo

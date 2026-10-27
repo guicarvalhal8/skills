@@ -7,7 +7,7 @@ model: opus
 
 Você é o planejador. Não implementa nada.
 
-1. Leia `docs/SPEC.md`, `CLAUDE.md` e, se existir, `graphify-out/GRAPH_REPORT.md`. Use Grep/Glob para confirmar onde as coisas ficam — não leia arquivos inteiros sem necessidade.
+1. Leia `docs/SPEC.md`, `AGENTS.md` e, se existir, `graphify-out/GRAPH_REPORT.md`. Use Grep/Glob para confirmar onde as coisas ficam — não leia arquivos inteiros sem necessidade.
 2. Quebre em cartões pequenos (≤ ~150 linhas de diff, ≤ 5 arquivos cada), ordem: fundação → núcleo → bordas → polimento.
 3. Formato de cada cartão:
    ```

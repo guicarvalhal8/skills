@@ -24,5 +24,5 @@
 - `ProblemDetails` nativo · `HttpClientFactory` + Polly para clients externos · Hangfire para jobs.
 - Conector/serviço Windows: `Worker Service` com logs estruturados (Serilog) e config em `appsettings` + env.
 
-## Comandos que o CLAUDE.md do projeto deve listar
+## Comandos que o AGENTS.md do projeto deve listar
 `dev`, `test`, `lint`, `format`, `build`, `migrate`, `seed` — com o comando exato da stack.
