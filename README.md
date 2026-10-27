@@ -37,14 +37,14 @@ skills-base/
 
 ### Linux / macOS / WSL / Git Bash
 ```bash
-git clone https://github.com/<seu-usuario>/skills-base.git ~/skills-base
+git clone https://github.com/guicarvalhal8/skills.git ~/skills-base
 cd ~/skills-base && ./install.sh          # cria links simbólicos (git pull atualiza tudo)
 ./install.sh --copy                        # ou copia em vez de linkar
 ```
 
 ### Windows (PowerShell)
 ```powershell
-git clone https://github.com/<seu-usuario>/skills-base.git $HOME\skills-base
+git clone https://github.com/guicarvalhal8/skills.git $HOME\skills-base
 cd $HOME\skills-base; .\install.ps1        # usa junctions (não precisa de admin)
 ```
 
@@ -57,7 +57,7 @@ Depois **reinicie o Claude Code**.
 
 ### Alternativa: como plugin
 ```
-/plugin marketplace add <seu-usuario>/skills-base
+/plugin marketplace add guicarvalhal8/skills
 /plugin install skills-base@skills-base
 ```
 (Como plugin as skills ficam com prefixo: `/skills-base:iniciar-projeto`.)
