@@ -9,6 +9,7 @@ NOME="${2:-$(basename "$ALVO")}"
 TEMPLATE="$REPO/templates/projeto"
 
 mkdir -p "$ALVO"
+ALVO="$(cd "$ALVO" && pwd)"
 cd "$TEMPLATE"
 find . -type f | while read -r arq; do
   destino="$ALVO/${arq#./}"
